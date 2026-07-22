@@ -4,7 +4,7 @@ import barberImage from "../../assets/images/barber-photo.jpg";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero__container">
         <div className="hero__content">
 
@@ -25,7 +25,7 @@ function Hero() {
 
         <div className="hero__buttons">
         <Button
-                  onClick={() =>
+            onClick={() =>
             document
             .getElementById("contact")
             ?.scrollIntoView({ behavior: "smooth" })

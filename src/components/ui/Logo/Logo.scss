@@ -1,0 +1,71 @@
+    @use "../../../styles/variables" as *;
+    
+    .logo {
+    width: 190px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    font-family: $font-heading;
+    text-transform: uppercase;
+
+      &:hover {
+        opacity: .9;
+    }
+
+    span:first-child {
+        color: $color-light;
+        font-size: .95rem;
+        letter-spacing: 6px;
+        margin-bottom: 0px;
+    }
+
+    span:last-child {
+        color: $color-primary;
+        font-size: 2.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-top: 0px;
+        line-height: 1;
+    }
+        &__divider {
+        width: 160px;
+
+        display: flex;
+        align-items: center;
+
+        margin: 6px 0;
+
+        span {
+            flex: 1;
+            border-top: 1.5px solid $color-primary;
+        }
+        }
+
+        &__icon {
+        flex-shrink: 0;
+
+        margin: 0 12px;
+
+        color: $color-primary;
+        font-size: 0.9rem;
+
+        vertical-align: middle;
+
+        transition: transform 0.3s ease;
+        transform: translateY(1px);
+    }
+    }
+
+
+
+    .logo:hover {
+    .logo__icon {
+        transform: rotate(-180deg);
+        }
+    }

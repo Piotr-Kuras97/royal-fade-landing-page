@@ -3,6 +3,7 @@ import Button from "../ui/Button/Button";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCut, faGripLines, faXmark} from "@fortawesome/free-solid-svg-icons";
+import Logo from "../ui/Logo/Logo";
 
 import { useState } from "react";
   
@@ -13,22 +14,8 @@ function Navbar() {
     <>
     <header className="navbar">
       <div className="navbar__container">
-        <a href="#" className="navbar__logo">
-          <span>Royal</span>
 
-              <div className="navbar__logo-divider">
-                <span></span>
-
-                <FontAwesomeIcon
-                icon={faCut}
-                className="navbar__logo-icon"
-                />
-
-                <span></span>
-            </div>
-
-          <span>Fade</span>
-        </a>
+        <Logo />
 
         <nav
         className={`navbar__navigation ${
