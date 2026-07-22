@@ -47,6 +47,10 @@ function Navbar() {
             Galeria
             </a>
 
+            <a href="#testimonials" onClick={() => setIsMenuOpen(false)}>
+            Opinie
+            </a>
+
             <a href="#contact" onClick={() => setIsMenuOpen(false)}>
             Kontakt
             </a>
