@@ -1,0 +1,170 @@
+@use "../../../styles/variables" as *;
+
+.contact-form {
+
+    width: 100%;
+
+    padding: 48px;
+
+    background: $color-surface;
+
+    border: $border-primary;
+
+    border-radius: $radius-card;
+
+    &__title {
+
+    margin-bottom: 36px;
+
+    color: $color-white;
+
+    font-size: 2rem;
+    font-family: $font-heading;
+
+    text-align: center;
+
+    }
+
+    &__form {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    }
+
+    &__group {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    }
+
+    &__group label {
+
+    color: rgba(255,255,255,.75);
+
+    font-size: .95rem;
+
+    font-weight: 500;
+
+    }
+
+    &__group input,
+    &__group textarea {
+
+        width: 100%;
+
+        padding: 16px 18px;
+
+        background: rgba(255,255,255,.03);
+
+        border: 1px solid rgba(255,255,255,.08);
+
+        border-radius: 12px;
+
+        color: $color-white;
+
+        font-size: 1rem;
+
+        transition: $transition-default;
+
+    }
+
+    &__group input::placeholder,
+    &__group textarea::placeholder {
+
+        color: rgba(255,255,255,.35);
+        transition: $transition-default;
+
+    }
+
+    &__group input:focus,
+    &__group textarea:focus {
+
+        outline: none;
+
+        border-color: $color-primary;
+
+        box-shadow: 0 0 0 3px rgba(212,175,55,.12);
+        transform: translateY(-2px);
+        opacity: .6;
+
+    }
+
+    &__group textarea {
+
+    resize: vertical;
+
+    min-height: 160px;
+
+    }
+
+    .button {
+
+        margin-top: 12px;
+
+        width: 100%;
+
+    }
+
+    &__error {
+
+    margin-top: 6px;
+
+    color: #ff6b6b;
+
+    font-size: .875rem;
+
+    line-height: 1.4;
+
+    }
+
+}
+
+@media (max-width: $breakpoint-lg) {
+
+    .contact-form {
+
+        padding: 40px;
+
+    }
+
+}
+
+@media (max-width: $breakpoint-md) {
+
+    .contact-form {
+
+        padding: 32px 24px;
+
+    }
+
+}
+
+.contact-form__success {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+
+    background: rgba(76, 175, 80, 0.15);
+    border: 1px solid rgba(76, 175, 80, 0.35);
+
+    color: #8bc34a;
+    font-weight: 500;
+}
+
+.contact-form__submit-error {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+
+    background: rgba(244, 67, 54, 0.12);
+    border: 1px solid rgba(244, 67, 54, 0.35);
+
+    color: #ef5350;
+    font-weight: 500;
+}

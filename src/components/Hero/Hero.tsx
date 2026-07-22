@@ -24,7 +24,12 @@ function Hero() {
         </p>
 
         <div className="hero__buttons">
-        <Button>
+        <Button
+                  onClick={() =>
+            document
+            .getElementById("contact")
+            ?.scrollIntoView({ behavior: "smooth" })
+            }>
             Umów wizytę
         </Button>
 

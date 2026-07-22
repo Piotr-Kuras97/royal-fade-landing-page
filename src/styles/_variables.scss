@@ -1,7 +1,11 @@
 $color-primary: #d4af37;
 $color-dark: #111111;
 $color-light: #ffffff;
+$color-text: rgba(255, 255, 255, 0.7);
 $color-gray: #777777;
+$color-surface: #151515;
+$color-white: #ffffff;
+$color-background: #0a0a0a;
 
 $container-width: 1200px;
 
@@ -13,3 +17,14 @@ $font-body: "Manrope", sans-serif;
 $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
+
+$border-primary: 1px solid rgba(212, 175, 55, .15);
+$border-primary-hover: 1px solid rgba(212, 175, 55, .35);
+
+$radius-card: 24px;
+$radius-circle: 50%;
+
+$shadow-card: 0 20px 50px rgba(0, 0, 0, .35);
+$shadow-icon: 0 0 20px rgba(212, 175, 55, .25);
+
+$transition-default: all .3s ease;

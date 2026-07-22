@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/Services/Services";
 import Gallery from "./components/Gallery/Gallery";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Services />
       <Gallery />
       <Testimonials />
+      <Contact />
     </>
   );
 }
