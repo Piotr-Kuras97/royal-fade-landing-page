@@ -50,14 +50,12 @@ return (
             </div>
 
                 <div className="services__grid">
-                    <div className="services__grid">
-                        {services.map(service => (
-                            <ServiceCard
-                                key={service.id}
-                                service={service}
-                            />
-                        ))}
-                    </div>
+                    {services.map((service) => (
+                        <ServiceCard
+                            key={service.id}
+                            service={service}
+                        />
+                    ))}
                 </div>
 
         </div>

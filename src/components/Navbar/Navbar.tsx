@@ -30,9 +30,10 @@ function Navbar() {
         <Logo />
 
         <nav
-        className={`navbar__navigation ${
-            isMenuOpen ? "navbar__navigation--active" : ""
-        }`}
+            id="navbar-navigation"
+            className={clsx("navbar__navigation", {
+                "navbar__navigation--active": isMenuOpen,
+            })}
         >
             {navigationItems.map((item) => (
                 <a
@@ -56,15 +57,23 @@ function Navbar() {
             </Button>
         </nav>
 
-        <button
-            className="navbar__hamburger"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Otwórz menu"
-            >
-            <FontAwesomeIcon
-                icon={isMenuOpen ? faXmark : faGripLines}
-            />
-        </button>
+      <button
+          type="button"
+          className="navbar__hamburger"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={
+              isMenuOpen
+                  ? "Zamknij menu"
+                  : "Otwórz menu"
+          }
+          aria-expanded={isMenuOpen}
+          aria-controls="navbar-navigation"
+      >
+          <FontAwesomeIcon
+              icon={isMenuOpen ? faXmark : faGripLines}
+              aria-hidden="true"
+          />
+      </button>
       </div>
     </header>
 

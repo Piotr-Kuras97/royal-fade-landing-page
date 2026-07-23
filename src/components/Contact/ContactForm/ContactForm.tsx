@@ -118,13 +118,20 @@ const ContactForm = () => {
             </h3>
 
             {isSuccess && (
-                <div className="contact-form__success">
+                <div 
+                    className="contact-form__success"
+                    role="status"
+                    aria-live="polite"
+                >
                     Dziękujemy! Twoja wiadomość została pomyślnie wysłana.
                 </div>
             )}
 
             {submitError && (
-                <div className="contact-form__submit-error">
+                <div 
+                    className="contact-form__submit-error"
+                    role="alert"
+                >
                     {submitError}
                 </div>
             )}
@@ -139,7 +146,9 @@ const ContactForm = () => {
                     </label>
 
                     <input
+                        id="name"
                         name="name"
+                        required
                         type="text"
                         value={formData.name}
                         onChange={handleChange}
@@ -162,16 +171,20 @@ const ContactForm = () => {
                     </label>
 
                     <input
+                        id="email"
                         name="email"
+                        required
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
                         autoComplete="email"
                         placeholder="→ Wpisz swój adres e-mail"
+                        aria-invalid={!!errors.email}
+                        aria-describedby="email-error"
                     />
 
                     {errors.email && (
-                    <span className="contact-form__error">
+                    <span className="contact-form__error" id="email-error">
                         {errors.email}
                     </span>
                     )}
@@ -185,7 +198,9 @@ const ContactForm = () => {
                     </label>
 
                     <input
+                        id="phone"
                         name="phone"
+                        required
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
@@ -208,7 +223,9 @@ const ContactForm = () => {
                     </label>
 
                     <textarea
+                        id="message"
                         name="message"
+                        required
                         value={formData.message}
                         onChange={handleChange}
                         rows={6}

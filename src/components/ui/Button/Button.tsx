@@ -13,9 +13,10 @@ function Button({
 }: ButtonProps) {
   return (
     <button
+      type="button"
       className={clsx("button", `button--${variant}`, className)}
-      {...props}
       disabled={disabled}
+      {...props}
     >
       {children}
     </button>
