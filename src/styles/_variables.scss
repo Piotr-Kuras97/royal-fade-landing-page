@@ -6,10 +6,12 @@ $color-gray: #777777;
 $color-surface: #151515;
 $color-white: #ffffff;
 $color-background: #0a0a0a;
+$color-description: #bdbdbd;
 
-$container-width: 1200px;
+$container-width: 1280px;
 
 $transition: 0.3s ease;
+$transition-default: all .3s ease;
 
 $font-heading: "Cormorant Garamond", serif;
 $font-body: "Manrope", sans-serif;
@@ -27,4 +29,3 @@ $radius-circle: 50%;
 $shadow-card: 0 20px 50px rgba(0, 0, 0, .35);
 $shadow-icon: 0 0 20px rgba(212, 175, 55, .25);
 
-$transition-default: all .3s ease;

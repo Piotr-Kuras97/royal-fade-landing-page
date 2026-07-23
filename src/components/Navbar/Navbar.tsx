@@ -1,15 +1,19 @@
 import "./Navbar.scss";
 import Button from "../ui/Button/Button";
+import { navigationItems } from "./navigation.data";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCut, faGripLines, faXmark} from "@fortawesome/free-solid-svg-icons";
+import { faGripLines, faXmark} from "@fortawesome/free-solid-svg-icons";
 import Logo from "../ui/Logo/Logo";
 
 import { useState } from "react";
+import useActiveSection from "../../hooks/useActiveSection";
+import clsx from "clsx";
   
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeSection = useActiveSection();
   return (
     <>
     <header className="navbar">
@@ -22,30 +26,25 @@ function Navbar() {
             isMenuOpen ? "navbar__navigation--active" : ""
         }`}
         >
-            <a href="#about" onClick={() => setIsMenuOpen(false)}>
-            O nas
-            </a>
+            {navigationItems.map((item) => (
+                <a
+                    key={item.href}
+                    href={item.href}
+                    className={clsx("navbar__link", {
+                        "navbar__link--active":
+                            activeSection === item.href.substring(1),
+                    })}
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                    {item.label}
+                </a>
+            ))}
 
-            <a href="#services" onClick={() => setIsMenuOpen(false)}>
-            Usługi
-            </a>
-
-            <a href="#gallery" onClick={() => setIsMenuOpen(false)}>
-            Galeria
-            </a>
-
-            <a href="#testimonials" onClick={() => setIsMenuOpen(false)}>
-            Opinie
-            </a>
-
-            <a href="#contact" onClick={() => setIsMenuOpen(false)}>
-            Kontakt
-            </a>
-
-            
             <Button
                 className="navbar__menu-button"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => 
+                  setIsMenuOpen(false)
+                }
                 >
                 Umów wizytę
             </Button>

@@ -2,21 +2,16 @@
 
 .hero {
   min-height: 100vh;
-
   display: flex;
   align-items: center;
-
   padding: 100px 0 60px;
-
   background: #0a0a0a;
 
   &__container {
-    max-width: 1280px;
+    max-width: $container-width;
     width: 100%;
-
     margin: 0 auto;
     padding: 0 40px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -33,51 +28,42 @@
     display: flex;
     align-items: center;
     gap: 14px;
-
     margin-bottom: 24px;
 
     span {
         width: 60px;
         height: 1px;
-
         background: $color-primary;
     }
 
     p {
         color: $color-primary;
-
         text-transform: uppercase;
         letter-spacing: 3px;
         font-size: .85rem;
         font-weight: 600;
-    }
+      }
     }
 
     &__title {
     margin-bottom: 24px;
-
     font-family: $font-heading;
     font-size: 5rem;
     font-weight: 600;
     line-height: .9;
     text-transform: uppercase;
-
     color: $color-light;
 
     span {
         display: block;
-
         color: $color-primary;
-    }
+      }
     }
 
     &__description {
     max-width: 520px;
-
     margin-bottom: 40px;
-
-    color: #bdbdbd;
-
+    color: $color-description;
     font-size: 1.05rem;
     line-height: 1.8;
     }
@@ -95,25 +81,20 @@
 
   &__image::before {
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     background: linear-gradient(
         to left,
         transparent 70%,
         #0a0a0a
     );
-
     pointer-events: none;
     }
+
     &__image img {
     width: 100%;
     max-width: 560px;
-
     border-radius: 14px;
-
     display: block;
     border: 1px solid rgba(212, 175, 55, .35);
     box-shadow:
@@ -161,11 +142,9 @@
 
     &__buttons {
     width: 100%;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 16px;
     }
 

@@ -1,28 +1,21 @@
 @use "../../../styles/variables" as *;
 
 .button {
-    min-width: 180px;
+  min-width: 180px;
   padding: 14px 32px;
-
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 999px;
-
   font-family: $font-body;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 1px;
-
   transition: $transition;
 
       &:disabled {
-
         opacity: .7;
-
         pointer-events: none;
-
     }
 
   &--primary {
@@ -37,9 +30,7 @@
 
   &--secondary {
     background: transparent;
-
     border: 1px solid rgba(212, 175, 55, .4);
-
     color: $color-light;
 
     &:hover {

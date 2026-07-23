@@ -3,12 +3,9 @@
 .gallery-item {
     width: 100%;
     position: relative;
-
     overflow: hidden;
-
     border-radius: 18px;
     cursor: pointer;
-
     &::after {
     content: "";
     position: absolute;
@@ -44,16 +41,12 @@
     }
 
     &__overlay {
-                position: absolute;
-
+        position: absolute;
         inset: 0;
-
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-
         padding: 32px;
-
         background: linear-gradient(
             to top,
             rgba(0,0,0,.88) 0%,
@@ -61,36 +54,24 @@
             rgba(0,0,0,.1) 75%,
             transparent 100%
         );
-
         opacity: 0;
-
         transition: opacity .35s ease;
     }
 
     &__category {
         margin-bottom: 8px;
-
         color: $color-primary;
-
         font-size: .8rem;
-
         font-weight: 600;
-
         letter-spacing: 2px;
-
         text-transform: uppercase;
     }
 
     &__title {
-
     color: white;
-
     font-size: 1.8rem;
-
     font-family: $font-heading;
-
     font-weight: 600;
-
     line-height: 1.2;
     }
 
@@ -98,7 +79,6 @@
     &__title {
     transform: translateY(20px);
     opacity: 0;
-
     transition:
         transform .4s ease,
         opacity .4s ease;
@@ -135,7 +115,6 @@
 @media (max-width: $breakpoint-lg) {
 
     .gallery-item {
-
         &--large {
             grid-column: span 2;
             grid-row: span 1;
@@ -157,20 +136,16 @@
         &__category {
             font-size: .75rem;
         }
-
     }
 }
 
 @media (max-width: $breakpoint-md) {
 
     .gallery-item {
-
         &--large,
         &--wide {
-
             grid-column: auto;
             grid-row: auto;
-
         }
 
         &__overlay {
@@ -185,29 +160,23 @@
             font-size: .72rem;
             margin-bottom: 6px;
         }
-
     }
 }
 
 @media (hover: none) {
-
     .gallery-item {
-
         &__overlay {
             opacity: 1;
         }
-
         &__category,
         &__title {
             opacity: 1;
             transform: translateY(0);
         }
-
         &::after {
             opacity: 1;
             transform: scale(1);
             inset: 10px;
         }
-
     }
 }

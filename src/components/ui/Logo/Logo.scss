@@ -2,15 +2,12 @@
     
     .logo {
     width: 190px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-
     text-decoration: none;
-
     font-family: $font-heading;
     text-transform: uppercase;
 
@@ -35,34 +32,26 @@
     }
         &__divider {
         width: 160px;
-
         display: flex;
         align-items: center;
-
         margin: 6px 0;
 
         span {
             flex: 1;
             border-top: 1.5px solid $color-primary;
-        }
+            }
         }
 
         &__icon {
         flex-shrink: 0;
-
         margin: 0 12px;
-
         color: $color-primary;
         font-size: 0.9rem;
-
         vertical-align: middle;
-
         transition: transform 0.3s ease;
         transform: translateY(1px);
+        }
     }
-    }
-
-
 
     .logo:hover {
     .logo__icon {

@@ -3,34 +3,25 @@
 .services {
     position: relative;
     padding: 120px 0;
-
     background: #0a0a0a;
-
     &::before {
-
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 220px;
     height: 1px;
-
     background: linear-gradient(
         to right,
         transparent,
         rgba(212,175,55,.4),
         transparent
-    );
-
+        );
     }
 
     &__container {
-        max-width: 1280px;
+        max-width: $container-width;
         margin: 0 auto;
         padding: 0 40px;
     }
@@ -38,18 +29,14 @@
     &__header {
         max-width: 700px;
         margin: 0 auto 80px;
-
         text-align: center;
     }
 
     &__subtitle {
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         gap: 14px;
-
         margin-bottom: 20px;
 
         span {
@@ -66,56 +53,40 @@
     }
 
     &__title {
-
         margin-bottom: 24px;
         max-width: 520px;
-
         margin-inline: auto;
-
         font-family: $font-heading;
-
         font-size: 3.2rem;
-
         color: $color-light;
     }
 
     &__description {
-        color: #bdbdbd;
+        color: $color-description;
         max-width: 620px;
         margin: 0 auto;
         line-height: 1.9;
     }
 
     &__accent {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 14px;
-
     margin-top: 40px;
 
     span {
-
         width: 60px;
         height: 1px;
-
         background: rgba(212,175,55,.3);
-
     }
 
     div {
-
         width: 6px;
         height: 6px;
-
         background: $color-primary;
-
         transform: rotate(45deg);
-
-    }
-
+        }
     }
 
     .services__grid {
@@ -127,9 +98,7 @@
 }
 
 @media (max-width: $breakpoint-lg) {
-
     .services {
-
         padding: 90px 0;
 
         &__container {
@@ -143,20 +112,16 @@
         &__description {
             max-width: 100%;
         }
-
     }
 
     .service-card {
         flex: 0 1 calc(50% - 14px);
         max-width: calc(50% - 14px);
     }
-
 }
 
 @media (max-width: $breakpoint-md) {
-
     .services {
-
         padding: 80px 0;
 
         &__container {
@@ -174,21 +139,17 @@
         &__accent {
             margin-top: 30px;
         }
-
     }
 
     .service-card {
         flex: 1 1 100%;
         max-width: 100%;
-
         padding: 36px 24px;
 
         &__icon {
             width: 80px;
             height: 80px;
-
             margin-bottom: 24px;
-
             svg {
                 font-size: 1.8rem;
             }
@@ -206,5 +167,4 @@
             margin: 24px auto;
         }
     }
-
 }
