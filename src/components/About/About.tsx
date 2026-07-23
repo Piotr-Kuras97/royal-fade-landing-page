@@ -11,9 +11,28 @@ import {
 import clsx from "clsx";
 
 import useReveal from "../../hooks/useReveal";
+import useCountUp from "../../hooks/useCountUp";
 
 function About() {
   const { ref, isVisible } = useReveal();
+
+  const experience = useCountUp({
+    end: 10,
+    startAnimation: isVisible,
+    delay: 0
+});
+
+  const clients = useCountUp({
+      end: 3000,
+      startAnimation: isVisible,
+      delay: 400
+  });
+
+  const rating = useCountUp({
+      end: 49,
+      startAnimation: isVisible,
+      delay: 800
+  });
 
   return (
       <section
@@ -77,17 +96,17 @@ function About() {
       <div className="about__stats">
 
         <div className="about__stat">
-          <h3>10+</h3>
+          <h3>{experience}+</h3>
           <p>Lat doświadczenia</p>
         </div>
 
         <div className="about__stat">
-          <h3>3000+</h3>
+          <h3>{clients}+</h3>
           <p>Zadowolonych klientów</p>
         </div>
 
         <div className="about__stat">
-          <h3>4.9★</h3>
+          <h3>{(rating / 10).toFixed(1)}★</h3>
           <p>Średnia ocen</p>
         </div>
 

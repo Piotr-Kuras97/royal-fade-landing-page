@@ -14,6 +14,14 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const activeSection = useActiveSection();
+
+  const handleAppointmentClick = () => {
+    setIsMenuOpen(false);
+
+    document
+        .getElementById("contact")
+        ?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
     <header className="navbar">
@@ -42,9 +50,7 @@ function Navbar() {
 
             <Button
                 className="navbar__menu-button"
-                onClick={() => 
-                  setIsMenuOpen(false)
-                }
+                onClick={handleAppointmentClick}
                 >
                 Umów wizytę
             </Button>
