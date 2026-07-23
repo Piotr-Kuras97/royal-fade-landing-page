@@ -3,10 +3,26 @@ import ContactForm from "./ContactForm/ContactForm";
 
 import ContactInfo from "./ContactInfo/ContactInfo";
 
+import clsx from "clsx";
+
+import useReveal from "../../hooks/useReveal";
+
 const Contact = () => {
 
+    const { ref, isVisible } = useReveal();
+
     return (
-        <section className="contact" id="contact">
+        <section
+            id="contact"
+            ref={ref}
+            className={clsx(
+                "contact",
+                "reveal",
+                {
+                "reveal--visible": isVisible,
+                }
+            )}
+              >
 
             <div className="container contact__container">
 

@@ -4,11 +4,24 @@ import GalleryItem from "./GalleryItem/GalleryItem";
 
 import { galleryImages } from "./gallery.data";
 
+import clsx from "clsx";
+
+import useReveal from "../../hooks/useReveal";
+
 const Gallery = () => {
+    const { ref, isVisible } = useReveal();
+
     return (
         <section
-            className="gallery"
             id="gallery"
+            ref={ref}
+            className={clsx(
+                "gallery",
+                "reveal",
+                {
+                    "reveal--visible": isVisible,
+                }
+            )}
         >
             <div className="gallery__container container">
 

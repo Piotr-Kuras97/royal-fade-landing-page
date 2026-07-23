@@ -10,7 +10,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { testimonials } from "./Testimonials.data";
 
+import clsx from "clsx";
+
+import useReveal from "../../hooks/useReveal";
+
 const Testimonials = () => {
+    const { ref, isVisible } = useReveal();
 
     type AnimationPhase = "idle" | "leaving" | "entering";
 
@@ -76,7 +81,17 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="testimonials" id="testimonials">
+        <section
+            id="testimonials"
+            ref={ref}
+            className={clsx(
+                "testimonials",
+                "reveal",
+                {
+                    "reveal--visible": isVisible,
+                }
+            )}
+        >
 
             <div className="container testimonials__container">
 

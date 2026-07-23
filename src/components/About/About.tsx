@@ -8,9 +8,25 @@ import {
   faHandshake
 } from "@fortawesome/free-solid-svg-icons";
 
+import clsx from "clsx";
+
+import useReveal from "../../hooks/useReveal";
+
 function About() {
+  const { ref, isVisible } = useReveal();
+
   return (
-    <section className="about" id="about">
+      <section
+          id="about"
+          ref={ref}
+          className={clsx(
+              "about",
+              "reveal",
+              {
+                  "reveal--visible": isVisible,
+              }
+          )}
+      >
       <div className="about__container">
 
         <div className="about__content">

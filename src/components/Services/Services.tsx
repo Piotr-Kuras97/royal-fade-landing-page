@@ -2,9 +2,25 @@ import ServiceCard from "./ServiceCard/ServiceCard";
 import { services } from "./services.data";
 import "./Services.scss";
 
+import clsx from "clsx";
+
+import useReveal from "../../hooks/useReveal";
+
 function Services() {
+const { ref, isVisible } = useReveal();
+
 return (
-    <section className="services" id="services">
+    <section
+        id="services"
+        ref={ref}
+        className={clsx(
+            "services",
+            "reveal",
+            {
+                "reveal--visible": isVisible,
+            }
+        )}
+    >
 
         <div className="services__container">
 
