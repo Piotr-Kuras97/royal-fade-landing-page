@@ -1,6 +1,6 @@
 # Royal Fade
 
-![Preview](./docs/og-image.jpg)
+![Preview](./docs/og-image.png)
 
 ## ✨ Features
 
