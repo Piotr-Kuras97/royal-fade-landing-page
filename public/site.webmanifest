@@ -1,6 +1,7 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Royal Fade",
+  "short_name": "Royal Fade",
+  "description": "Premium Barber Shop w Krakowie",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +16,8 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "display": "standalone",
+  "orientation": "portrait"
 }
