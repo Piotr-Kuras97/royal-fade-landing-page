@@ -1,0 +1,18 @@
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  &__name {
+    font-size: 1rem;
+  }
+
+  &__price {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+}

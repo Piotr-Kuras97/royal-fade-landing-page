@@ -60,7 +60,7 @@ function Navbar() {
                 "navbar__navigation--active": isMenuOpen,
             })}
         >
-            {navigationItems.map((item) => (
+            {navigationItems.slice(0, 2).map((item)  => (
                 <a
                     key={item.href}
                     href={item.href}
@@ -79,14 +79,29 @@ function Navbar() {
             to="/pricing" 
             className={clsx(
                 "navbar__link",
-                "navbar__link--pricing",
+                "navbar__pricing",
                 {
-                    "navbar__link--pricing-active": isPricingPage,
+                    "navbar__pricing--active": isPricingPage,
                 }
             )}
 >
                 Cennik
             </NavLink>
+
+            {navigationItems.slice(2).map((item)  => (
+                <a
+                    key={item.href}
+                    href={item.href}
+                    className={clsx("navbar__link", {
+                        "navbar__link--active":
+                            isHomePage &&
+                            activeSection === item.href.substring(1),
+                    })}
+                    onClick={(event) => handleNavigation(event, item.href)}
+                >
+                    {item.label}
+                </a>
+            ))}
 
             <Button
                 className="navbar__menu-button"

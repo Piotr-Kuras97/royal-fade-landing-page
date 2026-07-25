@@ -5,6 +5,8 @@ import "./Services.scss";
 import clsx from "clsx";
 
 import useReveal from "../../../hooks/useReveal";
+import Button from "../../ui/Button/Button";
+import { NavLink } from "react-router-dom";
 
 function Services() {
 const { ref, isVisible } = useReveal();
@@ -57,7 +59,19 @@ return (
                             />
                         ))}
                     </div>
-
+                    <div className="services__pricing">
+                        <p className="services__pricing-text">
+                            Nie znalazłeś interesującej Cię usługi?
+                        </p>
+                        <NavLink
+                            to="/pricing"
+                            className="services__pricing-link"
+                        >
+                            <Button variant="secondary">
+                                Zobacz pełny cennik
+                            </Button>
+                        </NavLink>
+                    </div>
             </div>
         </div>
 

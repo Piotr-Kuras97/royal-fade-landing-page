@@ -99,10 +99,51 @@
         z-index: 998;
         animation: overlayFade .3s ease;
     }
+
+    .navbar__pricing {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.65rem 1.35rem;
+
+    border: 1px solid $color-primary;
+    border-radius: 999px;
+
+    color: $color-primary;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.2s ease;
+    }
+
+        .navbar__pricing:hover {
+            background-color: $color-primary;
+            color: $color-dark;
+
+            transform: translateY(-2px);
+        }
+
+        .navbar__pricing--active {
+            background-color: $color-primary;
+            color: $color-dark;
+
+            border-color: $color-primary;
+        }
+
+        .navbar__pricing--active:hover {
+            transform: none;
+        }
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1150px) {
   .navbar {
     &__container {
         padding: 0 24px;
