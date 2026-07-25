@@ -14,50 +14,51 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            ref={ref}
-            className={clsx(
-                "contact",
-                "reveal",
-                {
-                "reveal--visible": isVisible,
-                }
-            )}
-              >
+            className="contact"
+        >
 
-            <div className="container contact__container">
+            <div
+                ref={ref}
+                className={clsx("container", "reveal", {
+                    "reveal--visible": isVisible,
+                })}
+            >
 
-                <span className="contact__subtitle">
-                    Kontakt
-                </span>
+                <div className="container contact__container">
 
-                <h2 className="contact__title">
-                    Umów swoją wizytę
-                </h2>
+                    <span className="contact__subtitle">
+                        Kontakt
+                    </span>
 
-                <p className="contact__description">
-                    Masz pytania lub chcesz zarezerwować termin? Skontaktuj się z nami telefonicznie, mailowo lub skorzystaj z formularza kontaktowego.
-                </p>
+                    <h2 className="contact__title">
+                        Umów swoją wizytę
+                    </h2>
 
-                <div className="contact__divider">
+                    <p className="contact__description">
+                        Masz pytania lub chcesz zarezerwować termin? Skontaktuj się z nami telefonicznie, mailowo lub skorzystaj z formularza kontaktowego.
+                    </p>
 
-                    <span className="contact__divider-line" />
+                    <div className="contact__divider">
 
-                    <span className="contact__divider-icon" />
+                        <span className="contact__divider-line" />
 
-                    <span className="contact__divider-line" />
+                        <span className="contact__divider-icon" />
 
-                </div>
+                        <span className="contact__divider-line" />
 
-                <div className="contact__content">
+                    </div>
 
-                    <ContactForm />
+                    <div className="contact__content">
 
-                    <ContactInfo />
+                        <ContactForm />
+
+                        <ContactInfo />
+
+                    </div>
 
                 </div>
 
             </div>
-
         </section>
     );
 };

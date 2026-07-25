@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const useActiveSection = (): string => {
     const [activeSection, setActiveSection] = useState("hero");
+    const location = useLocation();
 
     useEffect(() => {
 
@@ -14,8 +16,8 @@ const useActiveSection = (): string => {
 
                     if (entry.isIntersecting) {
                         setActiveSection(entry.target.id);
+                        console.log(entry.target.id);
                     }
-
                 });
 
             },
@@ -25,11 +27,12 @@ const useActiveSection = (): string => {
             }
         );
 
+
         sections.forEach((section) => observer.observe(section));
         return () => {
             observer.disconnect();
         };    
-    }, []);
+    }, [location.pathname]);
 
     return activeSection;
 };

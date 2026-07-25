@@ -83,83 +83,84 @@ const Testimonials = () => {
     return (
         <section
             id="testimonials"
-            ref={ref}
-            className={clsx(
-                "testimonials",
-                "reveal",
-                {
-                    "reveal--visible": isVisible,
-                }
-            )}
+            className="testimonials"
         >
 
-            <div className="container testimonials__container">
+            <div
+                ref={ref}
+                className={clsx("container", "reveal", {
+                    "reveal--visible": isVisible,
+                })}
+            >
 
-                <span className="section-subtitle">
-                    Opinie
-                </span>
+                <div className="container testimonials__container">
 
-                <h2 className="section-title">
-                    Co mówią nasi klienci
-                </h2>
+                    <span className="section-subtitle">
+                        Opinie
+                    </span>
 
-                <p className="section-description">
-                    Poznaj opinie osób, które regularnie odwiedzają Royal Fade i przekonaj się, dlaczego tak wielu klientów wraca do nas przy każdej kolejnej wizycie.
-                </p>
+                    <h2 className="section-title">
+                        Co mówią nasi klienci
+                    </h2>
 
-                <div className="testimonials__slider">
-                <TestimonialCard
-                    testimonial={currentTestimonial}
-                    className={
-                        animationPhase === "leaving"
-                            ? "testimonial-card--fade"
-                            : undefined
-                    }
-                    onTransitionEnd={handleTransitionEnd}
-                />
+                    <p className="section-description">
+                        Poznaj opinie osób, które regularnie odwiedzają Royal Fade i przekonaj się, dlaczego tak wielu klientów wraca do nas przy każdej kolejnej wizycie.
+                    </p>
 
-                    <div className="testimonials__navigation">
+                    <div className="testimonials__slider">
+                    <TestimonialCard
+                        testimonial={currentTestimonial}
+                        className={
+                            animationPhase === "leaving"
+                                ? "testimonial-card--fade"
+                                : undefined
+                        }
+                        onTransitionEnd={handleTransitionEnd}
+                    />
 
-                        <button
-                            className="testimonials__arrow"
-                            onClick={handlePrevious}
-                            aria-label="Poprzednia opinia"
-                        >
-                            <FontAwesomeIcon icon={faChevronLeft} />
-                        </button>
+                        <div className="testimonials__navigation">
 
-                        <button
-                            className="testimonials__arrow"
-                            onClick={handleNext}
-                            aria-label="Następna opinia"
-                        >
-                            <FontAwesomeIcon icon={faChevronRight} />
-                        </button>
+                            <button
+                                className="testimonials__arrow"
+                                onClick={handlePrevious}
+                                aria-label="Poprzednia opinia"
+                            >
+                                <FontAwesomeIcon icon={faChevronLeft} />
+                            </button>
+
+                            <button
+                                className="testimonials__arrow"
+                                onClick={handleNext}
+                                aria-label="Następna opinia"
+                            >
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div className="testimonials__dots">
+
+                        {testimonials.map((testimonial, index) => (
+
+                            <button
+                                key={testimonial.id}
+                                className={`testimonials__dot ${
+                                    currentIndex === index ? "testimonials__dot--active" : ""
+                                }`}
+                                onClick={() => changeTestimonial(index)}
+                                aria-label={`Przejdź do opinii ${index + 1}`}
+                                aria-current={currentIndex === index}
+                            />
+
+                        ))}
 
                     </div>
 
                 </div>
 
-                <div className="testimonials__dots">
-
-                    {testimonials.map((testimonial, index) => (
-
-                        <button
-                            key={testimonial.id}
-                            className={`testimonials__dot ${
-                                currentIndex === index ? "testimonials__dot--active" : ""
-                            }`}
-                            onClick={() => changeTestimonial(index)}
-                            aria-label={`Przejdź do opinii ${index + 1}`}
-                            aria-current={currentIndex === index}
-                        />
-
-                    ))}
-
-                </div>
-
             </div>
-
         </section>
     );
 };

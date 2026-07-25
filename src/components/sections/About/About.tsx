@@ -37,80 +37,81 @@ function About() {
   return (
       <section
           id="about"
-          ref={ref}
-          className={clsx(
-              "about",
-              "reveal",
-              {
-                  "reveal--visible": isVisible,
-              }
-          )}
+          className="about"
       >
-      <div className="about__container">
 
-        <div className="about__content">
+        <div
+            ref={ref}
+            className={clsx("container", "reveal", {
+                "reveal--visible": isVisible,
+            })}
+        >
+          <div className="about__container">
 
-          <div className="about__subtitle">
-            <span></span>
-            <p>O nas</p>
+            <div className="about__content">
+
+              <div className="about__subtitle">
+                <span></span>
+                <p>O nas</p>
+              </div>
+
+              <h2 className="about__title">
+                Tworzymy miejsce,
+                do którego chce się wracać.
+              </h2>
+
+              <p className="about__description">
+                Royal Fade to barber shop stworzony z myślą
+                o mężczyznach, którzy cenią najwyższą jakość,
+                profesjonalizm oraz wyjątkową atmosferę.
+              </p>
+
+                <ul className="about__list">
+
+                    <li>
+                        <FontAwesomeIcon icon={faUserTie} />
+                        <span>Doświadczeni barberzy</span>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon icon={faAward} />
+                        <span>Najwyższej jakości kosmetyki</span>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon icon={faHandshake} />
+                        <span>Indywidualne podejście</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div className="about__image">
+                <img src={insideImage} alt="Inside" />
+            </div>
+
           </div>
 
-          <h2 className="about__title">
-            Tworzymy miejsce,
-            do którego chce się wracać.
-          </h2>
+          <div className="about__stats">
 
-          <p className="about__description">
-            Royal Fade to barber shop stworzony z myślą
-            o mężczyznach, którzy cenią najwyższą jakość,
-            profesjonalizm oraz wyjątkową atmosferę.
-          </p>
+            <div className="about__stat">
+              <h3>{experience}+</h3>
+              <p>Lat doświadczenia</p>
+            </div>
 
-            <ul className="about__list">
+            <div className="about__stat">
+              <h3>{clients}+</h3>
+              <p>Zadowolonych klientów</p>
+            </div>
 
-                <li>
-                    <FontAwesomeIcon icon={faUserTie} />
-                    <span>Doświadczeni barberzy</span>
-                </li>
+            <div className="about__stat">
+              <h3>{(rating / 10).toFixed(1)}★</h3>
+              <p>Średnia ocen</p>
+            </div>
 
-                <li>
-                    <FontAwesomeIcon icon={faAward} />
-                    <span>Najwyższej jakości kosmetyki</span>
-                </li>
-
-                <li>
-                    <FontAwesomeIcon icon={faHandshake} />
-                    <span>Indywidualne podejście</span>
-                </li>
-
-            </ul>
-
+          </div>
         </div>
-
-        <div className="about__image">
-            <img src={insideImage} alt="Inside" />
-        </div>
-
-      </div>
-
-      <div className="about__stats">
-
-        <div className="about__stat">
-          <h3>{experience}+</h3>
-          <p>Lat doświadczenia</p>
-        </div>
-
-        <div className="about__stat">
-          <h3>{clients}+</h3>
-          <p>Zadowolonych klientów</p>
-        </div>
-
-        <div className="about__stat">
-          <h3>{(rating / 10).toFixed(1)}★</h3>
-          <p>Średnia ocen</p>
-        </div>
-
-      </div>
 
     </section>
   );

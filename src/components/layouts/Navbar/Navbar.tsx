@@ -9,6 +9,9 @@ import Logo from "../../ui/Logo/Logo";
 import { useState } from "react";
 import useActiveSection from "../../../hooks/useActiveSection";
 import clsx from "clsx";
+
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+
   
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +25,28 @@ function Navbar() {
         .getElementById("contact")
         ?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isHomePage = location.pathname === "/";
+  const isPricingPage = location.pathname === "/pricing";
+
+  const handleNavigation = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+    ) => {
+        setIsMenuOpen(false);
+
+        if (location.pathname !== "/") {
+        event.preventDefault();
+        navigate("/", {
+            state: {
+                targetSection: href,
+            },
+        });
+        }
+    };
   return (
     <>
     <header className="navbar">
@@ -41,13 +66,27 @@ function Navbar() {
                     href={item.href}
                     className={clsx("navbar__link", {
                         "navbar__link--active":
+                            isHomePage &&
                             activeSection === item.href.substring(1),
                     })}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(event) => handleNavigation(event, item.href)}
                 >
                     {item.label}
                 </a>
             ))}
+
+            <NavLink 
+            to="/pricing" 
+            className={clsx(
+                "navbar__link",
+                "navbar__link--pricing",
+                {
+                    "navbar__link--pricing-active": isPricingPage,
+                }
+            )}
+>
+                Cennik
+            </NavLink>
 
             <Button
                 className="navbar__menu-button"

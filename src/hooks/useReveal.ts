@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const useReveal = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const ref = useRef<HTMLElement | null>(null);
+    const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         if (!ref.current) return;
