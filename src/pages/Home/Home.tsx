@@ -8,6 +8,7 @@ import Testimonials from "../../components/sections/Testimonials/Testimonials"
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+
 function Home(){
 
     const location = useLocation();
@@ -30,6 +31,8 @@ function Home(){
     }, [location.state]);
     return (
         <>
+
+
 
             <Hero />
             <About />

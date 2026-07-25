@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import Home from "../pages/Home";
 import Pricing from "../pages/Pricing";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
         {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
                 element: <Pricing />
             }
             ]   
+        },
+        {
+            path: "*",
+            element: <NotFound />,
         }
     ],
 

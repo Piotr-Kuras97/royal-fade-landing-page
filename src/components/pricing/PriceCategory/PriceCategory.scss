@@ -1,0 +1,61 @@
+@use "../../../styles/variables" as *;
+
+.price-category {
+  padding: 3rem;
+
+  background-color: #151515;
+
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 1rem;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(212, 175, 55, 0.35);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .price-category__heading {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 2rem;
+}
+
+  &__title {
+
+    color: $color-primary;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-category {
+    padding: 2rem;
+
+    &__title {
+      margin-bottom: 1.5rem;
+
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .price-category {
+    padding: 1.5rem;
+  }
+}

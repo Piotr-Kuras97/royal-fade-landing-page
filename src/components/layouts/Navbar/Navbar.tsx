@@ -77,6 +77,7 @@ function Navbar() {
 
             <NavLink 
             to="/pricing" 
+            onClick={() => setIsMenuOpen(false)}
             className={clsx(
                 "navbar__link",
                 "navbar__pricing",

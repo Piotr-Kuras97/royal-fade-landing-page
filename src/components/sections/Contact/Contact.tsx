@@ -31,11 +31,11 @@ const Contact = () => {
                     </span>
 
                     <h2 className="contact__title">
-                        Umów swoją wizytę
+                        Skontaktuj się z nami
                     </h2>
 
                     <p className="contact__description">
-                        Masz pytania lub chcesz zarezerwować termin? Skontaktuj się z nami telefonicznie, mailowo lub skorzystaj z formularza kontaktowego.
+                        Chętnie odpowiemy na Twoje pytania. Skontaktuj się z nami telefonicznie, mailowo lub za pomocą formularza kontaktowego.
                     </p>
 
                     <div className="contact__divider">

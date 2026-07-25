@@ -1,0 +1,81 @@
+
+@use "../../styles/variables" as *;
+
+.pricing {
+  padding: 10rem 0 8rem;
+
+  &__container{
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 5rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__divider {
+    width: 5rem;
+    height: 2px;
+
+    margin-bottom: 2rem;
+
+    background-color: $color-primary;
+  }
+
+  &__subtitle {
+    max-width: 40rem;
+
+    text-align: center;
+    line-height: 1.8;
+
+    color: $color-description;
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pricing {
+    padding: 8rem 0 6rem;
+
+    &__header {
+      margin-bottom: 4rem;
+    }
+
+    &__categories {
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    padding: 7rem 0 5rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__subtitle {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    &__divider {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+
+@use "../../../styles/variables" as *;
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+
+        background: rgba(0, 0, 0, .7);
+
+        backdrop-filter: blur(6px);
+    }
+
+    &__content {
+        position: relative;
+
+        width: min(90%, 40rem);
+
+        padding: 2.5rem;
+
+        border-radius: 1rem;
+
+        background: $color-surface;
+
+        border: 1px solid rgba(212, 175, 55, .2);
+
+        z-index: 1;
+    }
+}

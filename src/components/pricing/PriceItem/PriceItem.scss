@@ -1,18 +1,62 @@
+@use "../../../styles/variables" as *;
+
 .price-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 
-  padding: 1rem 0;
+  padding: 1.25rem 0;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
 
   &__name {
-    font-size: 1rem;
+    color: $color-light;
+  }
+
+  &__divider {
+    flex: 1;
+
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.25);
   }
 
   &__price {
-    font-weight: 600;
-    color: var(--color-primary);
+    color: $color-primary;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-item {
+    gap: .75rem;
+
+    padding: .9rem 0;
+
+    &__name,
+    &__price {
+      font-size: .95rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .price-item {
+    gap: .5rem;
+
+    &__divider {
+      border-bottom-width: 1px;
+    }
+
+    &__price {
+      font-size: .9rem;
+    }
+
+    &__name {
+      font-size: .9rem;
+    }
   }
 }
