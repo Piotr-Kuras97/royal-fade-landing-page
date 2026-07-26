@@ -1,4 +1,4 @@
-import "./Pricing.scss";
+import './Pricing.scss'
 
 import PriceCategory from "../../components/pricing/PriceCategory";
 import { pricing } from "./pricing";
