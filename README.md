@@ -1,89 +1,115 @@
 # 💈 Royal Fade
 
-![Royal Fade Preview](./docs/og-image.png)
+<p align="center">
+  <img src="./docs/og-image.png" alt="Royal Fade Preview">
+</p>
+
+<p align="center">
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
-
-![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
-
-![SCSS](https://img.shields.io/badge/SCSS-CSS-EF7FA8?logo=sass)
-
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)
+![SCSS](https://img.shields.io/badge/SCSS-Sass-EF7FA8?logo=sass)
+![Motion](https://img.shields.io/badge/Motion-12-7C3AED)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A modern, fully responsive landing page for a premium barber shop built with React, TypeScript and SCSS.
+</p>
 
-🔗 **Live Demo:** https://piotr-kuras97.github.io/royal-fade-landing-page/
+A modern, fully responsive landing page for a premium barber shop built with **React**, **TypeScript**, **Vite** and **SCSS**.
+
+The project was created to practice writing clean, scalable React applications with a strong focus on component architecture, accessibility and user experience.
+
+## 🔗 Live Demo
+
+👉 https://royal-fade-landing-page.vercel.app/
 
 ---
 
-## ✨ Features
+# ✨ Features
 
+- 💈 Premium barber shop landing page
 - 📱 Fully responsive design
-- 🎨 Modern UI with smooth animations
-- ⚛️ Built with React + TypeScript
-- 🎯 Modular component architecture
-- 🎣 Custom React Hooks
-- 📝 Contact form with validation
-- ♿ Accessibility improvements (ARIA, semantic HTML)
-- 🔍 SEO optimized (Open Graph, Twitter Cards, Sitemap, Robots)
-- 🚀 Optimized for production
+- ⚛️ React 19 + TypeScript
+- 🎨 Modern UI with smooth animations (Motion)
+- 🧩 Reusable UI components
+- 📝 Booking form with validation
+- 📧 Contact form integrated with EmailJS
+- 🪝 Custom React Hooks
+- 🌐 React Router
+- 🗂 Context API for booking modal
+- ♿ Semantic HTML & ARIA attributes
+- 🚀 Optimized production build
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
-| React | UI Library |
+| React | UI |
 | TypeScript | Static typing |
-| Vite | Build tool |
+| Vite | Bundler |
 | SCSS | Styling |
+| Motion | Animations |
+| React Router | Routing |
+| Context API | Global state |
+| EmailJS | Contact & Booking forms |
 | FontAwesome | Icons |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
-src/
+src
 │
+├── animations/
 ├── assets/
+├── common/
 ├── components/
+├── context/
+├── features/
 ├── hooks/
+├── layouts/
+├── pages/
+├── router/
 ├── styles/
+└── main.tsx
 ```
 
 ---
 
-## 💡 What I Learned
+# 💡 What I Practiced
 
 During this project I focused on:
 
-- Component architecture
-- Custom React Hooks
-- TypeScript best practices
-- SCSS organization
+- Component-driven architecture
+- Building reusable UI components
+- Custom Hooks
+- React Context API
+- Form validation
+- Clean TypeScript
+- Responsive layouts
+- SCSS architecture (BEM)
 - Accessibility (WCAG basics)
-- SEO optimization
-- Responsive design
+- SEO fundamentals
 - Git workflow
+- Code organization
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-Clone the repository
+Clone repository
 
 ```bash
 git clone https://github.com/Piotr-kuras97/royal-fade-landing-page.git
 ```
 
-Go to the project directory
+Enter project
 
 ```bash
-cd royal-fade
+cd royal-fade-landing-page
 ```
 
 Install dependencies
@@ -106,45 +132,17 @@ npm run build
 
 ---
 
-## 📸 Screenshots
 
-### Desktop
-
-_(tu później dodamy screen)_
-
-### Mobile
-
-_(tu później dodamy screen)_
-
----
-
-## 📈 Lighthouse
-
-| Category | Score |
-|----------|------:|
-| Performance | 73+* |
-| Accessibility | 98 |
-| Best Practices | 96 |
-| SEO | 100 |
-
-> *Performance depends on browser cache and image optimization.
-
----
-
-## 🎯 Future Improvements
-
-- React Router
-- Pricing page
-- Lazy loading
-- Image optimization
-- Booking system
-- Dark/Light theme
-
----
-
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Piotr Kuraś**
 
 GitHub:
 https://github.com/Piotr-kuras97
+
+LinkedIn:
+*(optional)*
+
+---
+
+If you like the project, feel free to ⭐ the repository.
