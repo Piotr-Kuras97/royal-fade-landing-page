@@ -43,7 +43,7 @@
   }
 }
 
-@media ($breakpoint-md) {
+@media (max-width: $breakpoint-md) {
   .price-category {
     padding: 2rem;
 
@@ -55,7 +55,7 @@
   }
 }
 
-@media ($breakpoint-sm) {
+@media (max-width: $breakpoint-sm) {
   .price-category {
     padding: 1.5rem;
   }

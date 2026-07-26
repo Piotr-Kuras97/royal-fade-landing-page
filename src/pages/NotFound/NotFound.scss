@@ -52,7 +52,7 @@
     }
 }
 
-@media ($breakpoint-md) {
+@media (max-width: $breakpoint-md) {
     .not-found {
         padding: 6rem 0;
 
@@ -67,7 +67,7 @@
     }
 }
 
-@media ($breakpoint-sm) {
+@media (max-width: $breakpoint-sm) {
     .not-found {
         min-height: calc(100vh - 5rem);
 

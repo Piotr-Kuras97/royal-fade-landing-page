@@ -34,7 +34,7 @@
   }
 }
 
-@media ($breakpoint-md) {
+@media (max-width: $breakpoint-md) {
   .price-item {
     gap: .75rem;
 
@@ -47,7 +47,7 @@
   }
 }
 
-@media ($breakpoint-sm) {
+@media (max-width: $breakpoint-sm) {
   .price-item {
     gap: .5rem;
 
