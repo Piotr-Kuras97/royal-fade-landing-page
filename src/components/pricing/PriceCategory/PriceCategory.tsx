@@ -4,13 +4,13 @@ import PriceItem from "../PriceItem";
 
 import type { PriceCategoryProps } from "./PriceCategory.types";
 
-function PriceCategory({ title, services }: PriceCategoryProps) {
+const PriceCategory = ({ title, services }: PriceCategoryProps) => {
   return (
-    <section className="price-category">
+    <section className="price-category" aria-labelledby={`category-${title}`}>
         <div className="price-category__heading">
             <span className="price-category__accent" />
 
-            <h2 className="price-category__title">
+            <h2 className="price-category__title" id={`category-${title}`}>
                 {title}
             </h2>
         </div>

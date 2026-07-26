@@ -10,3 +10,5 @@ export const initialFormData: ContactFormData = {
 export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const PHONE_REGEX = /^[+]?[0-9\s-]{9,15}$/;  
+
+export const SUCCESS_MESSAGE_DURATION = 5000

@@ -2,7 +2,7 @@
 
 .gallery {
     padding: 120px 0;
-    background: #181818;
+    background: $color-background-secondary;
     &__container{
         max-width: $container-width;
         margin: 0 auto;
@@ -24,6 +24,7 @@
         color: $color-primary;
         text-transform: uppercase;
         letter-spacing: 2px;
+        
 
         span {
             width: 50px;
@@ -35,11 +36,14 @@
     &__title {
         margin-bottom: 20px;
         font-size: 3rem;
+        font-family: $font-heading;
     }
 
     &__description {
         color: $color-description;
         line-height: 1.8;
+        max-width: 620px;
+        margin: 0 auto;
     }
 
     &__accent {

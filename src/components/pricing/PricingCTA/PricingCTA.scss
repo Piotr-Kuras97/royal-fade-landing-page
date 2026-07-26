@@ -27,7 +27,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media ($breakpoint-sm) {
   .pricing-cta {
     padding: 3rem 1rem;
 

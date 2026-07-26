@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 
-function Home(){
+const Home = () => {
 
     const location = useLocation();
     const navigate = useNavigate();

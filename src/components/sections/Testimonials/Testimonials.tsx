@@ -27,63 +27,45 @@ const Testimonials = () => {
     const currentTestimonial = testimonials[currentIndex];
 
     const changeTestimonial = (newIndex: number) => {
-
         if (animationPhase !== "idle") return;
-
         setPendingIndex(newIndex);
-
         setAnimationPhase("leaving");
-
     };
 
     const handleTransitionEnd = () => {
 
         if (animationPhase === "leaving") {
-
-            setCurrentIndex(pendingIndex!);
-
+            if (pendingIndex === null) return;
+            setCurrentIndex(pendingIndex);
             setPendingIndex(null);
-
             setAnimationPhase("entering");
-
             return;
-
         }
 
         if (animationPhase === "entering") {
-
             setAnimationPhase("idle");
-
         }
 
     };
 
     const handleNext = () => {
-
         const nextIndex =
-            currentIndex === testimonials.length - 1
-                ? 0
-                : currentIndex + 1;
-
+            (currentIndex + 1) % testimonials.length;
         changeTestimonial(nextIndex);
-
     };
 
     const handlePrevious = () => {
-
         const previousIndex =
-            currentIndex === 0
-                ? testimonials.length - 1
-                : currentIndex - 1;
-
+            (currentIndex - 1 + testimonials.length)
+            % testimonials.length;
         changeTestimonial(previousIndex);
-
     };
 
     return (
         <section
             id="testimonials"
             className="testimonials"
+            aria-labelledby="testimonials-title"
         >
 
             <div
@@ -95,15 +77,15 @@ const Testimonials = () => {
 
                 <div className="container testimonials__container">
 
-                    <span className="section-subtitle">
+                    <span className="testimonials__subtitle">
                         Opinie
                     </span>
 
-                    <h2 className="section-title">
+                    <h2 className="testimonials__title" id="testimonials-title">
                         Co mówią nasi klienci
                     </h2>
 
-                    <p className="section-description">
+                    <p className="testimonials__description">
                         Poznaj opinie osób, które regularnie odwiedzają Royal Fade i przekonaj się, dlaczego tak wielu klientów wraca do nas przy każdej kolejnej wizycie.
                     </p>
 

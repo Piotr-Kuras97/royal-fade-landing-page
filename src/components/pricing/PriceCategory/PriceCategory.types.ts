@@ -1,4 +1,4 @@
-import type { PricingService } from "../../../data/pricing";
+import type { PricingService } from "../../../pages/Pricing/pricing";
 
 export interface PriceCategoryProps {
   title: string;

@@ -1,13 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCut } from "@fortawesome/free-solid-svg-icons";
 
+import { NavLink, useLocation  } from "react-router";
+
 import "./Logo.scss";
 
 const Logo = (): React.JSX.Element => {
 
+    const location = useLocation();
+
+    const scrollToTopIfHome  = () => {
+        if (location.pathname === "/") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
 
-        <a href="#hero" className="logo">
+        <NavLink
+            to="/"
+            onClick={scrollToTopIfHome}
+            className="logo"
+            aria-label="Przejdź do strony głównej"
+        >
 
             <span>Royal</span>
 
@@ -18,6 +36,7 @@ const Logo = (): React.JSX.Element => {
                 <FontAwesomeIcon
                     icon={faCut}
                     className="logo__icon"
+                    aria-hidden="true"
                 />
 
                 <span></span>
@@ -26,7 +45,7 @@ const Logo = (): React.JSX.Element => {
 
             <span>Fade</span>
 
-        </a>
+        </NavLink>
 
     );
 

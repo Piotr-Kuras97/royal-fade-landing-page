@@ -15,22 +15,21 @@ const Contact = () => {
         <section
             id="contact"
             className="contact"
+            aria-labelledby="contact-title"
         >
 
             <div
                 ref={ref}
-                className={clsx("container", "reveal", {
+                className={clsx("contact__container", "reveal", {
                     "reveal--visible": isVisible,
                 })}
             >
-
-                <div className="container contact__container">
 
                     <span className="contact__subtitle">
                         Kontakt
                     </span>
 
-                    <h2 className="contact__title">
+                    <h2 className="contact__title" id="contact-title">
                         Skontaktuj się z nami
                     </h2>
 
@@ -58,7 +57,6 @@ const Contact = () => {
 
                 </div>
 
-            </div>
         </section>
     );
 };

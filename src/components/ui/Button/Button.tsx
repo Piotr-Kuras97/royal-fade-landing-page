@@ -4,13 +4,13 @@ import "./Button.scss";
 
 import type { ButtonProps } from "./Button.types";
 
-function Button({
+const Button = ({
   children,
   variant = "primary",
   className,
   disabled,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       type="button"

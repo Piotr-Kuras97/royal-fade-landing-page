@@ -3,11 +3,11 @@ import Button from "../../components/ui/Button/Button";
 
 import "./NotFound.scss";
 
-function NotFound() {
+const NotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="not-found">
+    <section className="not-found" aria-labelledby="not-found-title">
       <div className="not-found__container">
 
         <div className="not-found__content">
@@ -16,7 +16,7 @@ function NotFound() {
             404
           </span>
 
-          <h1 className="not-found__title">
+          <h1 className="not-found__title" id="not-found-title">
             Strona nie została znaleziona
           </h1>
 

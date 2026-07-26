@@ -38,6 +38,7 @@ function About() {
       <section
           id="about"
           className="about"
+          aria-labelledby="about-title"
       >
 
         <div
@@ -55,7 +56,7 @@ function About() {
                 <p>O nas</p>
               </div>
 
-              <h2 className="about__title">
+              <h2 className="about__title" id="about-title">
                 Tworzymy miejsce,
                 do którego chce się wracać.
               </h2>
@@ -88,7 +89,7 @@ function About() {
             </div>
 
             <div className="about__image">
-                <img src={insideImage} alt="Inside" />
+                <img src={insideImage} alt="Wnętrze salonu Royal Fade" />
             </div>
 
           </div>

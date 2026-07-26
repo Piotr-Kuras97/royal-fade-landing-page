@@ -1,17 +1,17 @@
 import "./Pricing.scss";
 
 import PriceCategory from "../../components/pricing/PriceCategory";
-import { pricing } from "../../data/pricing";
+import { pricing } from "./pricing";
 import PricingCTA from "../../components/pricing/PricingCTA/PricingCTA";
 
 import useReveal from "../../hooks/useReveal";
 import clsx from "clsx";
 
-function Pricing() {
+const Pricing = () => {
     const { ref, isVisible } = useReveal();
 
     return (
-        <section className="pricing" id="pricing">
+        <section className="pricing" id="pricing" aria-labelledby="pricing-title">
             <div 
                 ref={ref}
                 className={clsx("pricing__container", "reveal", {
@@ -19,7 +19,7 @@ function Pricing() {
                 })}
             >
                 <div className="pricing__header">
-                <h1 className="pricing__title">Cennik</h1>
+                <h1 className="pricing__title" id="pricing-title">Cennik</h1>
 
                 <div className="pricing__divider" />
 

@@ -9,7 +9,7 @@ const Footer = (): React.JSX.Element => {
 
     return (
 
-        <footer className="footer">
+        <footer className="footer" aria-labelledby="footer-title">
 
             <div className="container">
 

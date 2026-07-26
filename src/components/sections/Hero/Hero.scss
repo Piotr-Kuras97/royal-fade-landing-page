@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   padding: 100px 0 60px;
-  background: #0a0a0a;
+  background: $color-background;
 
   &__container {
     max-width: $container-width;
@@ -77,9 +77,8 @@
     position: relative;
     display: flex;
     justify-content: center;
-  }
 
-  &__image::before {
+    &::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -91,7 +90,7 @@
     pointer-events: none;
     }
 
-    &__image img {
+    img {
     width: 100%;
     max-width: 560px;
     border-radius: 14px;
@@ -101,6 +100,7 @@
     0 20px 60px rgba(0,0,0,.55),
     0 0 40px rgba(212,175,55,.08);
     }
+  }
 }
 
 @media (max-width: 992px) {

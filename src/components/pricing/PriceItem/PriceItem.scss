@@ -13,6 +13,10 @@
 
   &__name {
     color: $color-light;
+
+    &:hover{
+      color: $color-primary;
+    }
   }
 
   &__divider {
@@ -30,7 +34,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media ($breakpoint-md) {
   .price-item {
     gap: .75rem;
 
@@ -43,7 +47,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media ($breakpoint-sm) {
   .price-item {
     gap: .5rem;
 
@@ -51,10 +55,7 @@
       border-bottom-width: 1px;
     }
 
-    &__price {
-      font-size: .9rem;
-    }
-
+    &__price,
     &__name {
       font-size: .9rem;
     }

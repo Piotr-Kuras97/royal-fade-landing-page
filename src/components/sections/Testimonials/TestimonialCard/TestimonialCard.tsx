@@ -28,11 +28,12 @@ const TestimonialCard = ({testimonial,className,onTransitionEnd }: TestimonialCa
 
             </div>
 
-            <div className="testimonial-card__rating">
+            <div className="testimonial-card__rating" aria-label={`${testimonial.rating} na 5 gwiazdek`}>
                 {Array.from({ length: testimonial.rating }).map((_, index) => (
                     <FontAwesomeIcon
                         key={index}
                         icon={faStar}
+                        aria-hidden="true"
                     />
                 ))}
             </div>
@@ -45,7 +46,7 @@ const TestimonialCard = ({testimonial,className,onTransitionEnd }: TestimonialCa
 
                 <img
                     src={testimonial.image}
-                    alt={testimonial.name}
+                    alt={`Zdjęcie klienta ${testimonial.name}`}
                     className="testimonial-card__image"
                 />
 

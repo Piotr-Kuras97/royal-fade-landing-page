@@ -2,9 +2,21 @@ import "./Hero.scss";
 import Button from "../../ui/Button/Button";
 import barberImage from "../../../assets/images/barber-photo.jpg";
 
-function Hero() {
+import { useBooking } from "../../../context/BookingContext";
+
+const Hero = () => {
+  const { openBooking } = useBooking();
+
+  const scrollToServices = () => {
+    document
+        .getElementById("services")
+        ?.scrollIntoView({
+            behavior: "smooth",
+        });
+  };
+
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" aria-labelledby="hero-title">
       <div className="hero__container">
         <div className="hero__content">
 
@@ -13,7 +25,7 @@ function Hero() {
             <p>Premium Barber Shop</p>
         </div>
 
-        <h1 className="hero__title">
+        <h1 className="hero__title" id="hero-title">
             Royal <span>Fade</span>
         </h1>
 
@@ -25,21 +37,13 @@ function Hero() {
 
         <div className="hero__buttons">
         <Button
-            onClick={() =>
-            document
-            .getElementById("contact")
-            ?.scrollIntoView({ behavior: "smooth" })
-            }>
+            onClick={openBooking}>
             Umów wizytę
         </Button>
 
         <Button 
             variant="secondary"
-            onClick={() =>
-            document
-            .getElementById("services")
-            ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={scrollToServices}
             >
             Nasze usługi
         </Button>
@@ -48,7 +52,7 @@ function Hero() {
         </div>
 
         <div className="hero__image">
-            <img src={barberImage} alt="Barber" />
+            <img src={barberImage} alt="Barber w salonie Royal Fade" />
         </div>
 
       </div>

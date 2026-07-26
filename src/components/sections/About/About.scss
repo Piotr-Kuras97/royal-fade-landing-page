@@ -2,7 +2,7 @@
 
 .about {
   padding: 120px 0;
-  background: #0a0a0a;
+  background: $color-background;
 
     &__container {
         max-width: $container-width;
@@ -22,7 +22,6 @@
 
 &__image {
     position: relative;
-    display: inline-block;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,8 +31,6 @@
         width: 100%;
         max-width: 520px;
         z-index: 2;
-        width: 100%;
-        max-width: 520px;
         display: block;
         border-radius: 14px;
         object-fit: cover;

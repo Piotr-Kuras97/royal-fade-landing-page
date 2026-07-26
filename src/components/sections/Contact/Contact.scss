@@ -9,6 +9,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 40px;
     }
 
     &__subtitle {
@@ -22,7 +23,7 @@
 
     &__title {
         margin-bottom: 24px;
-        color: $color-white;
+        color: $color-light;
         font-size: clamp(2.5rem, 5vw, 3.5rem);
         font-family: $font-heading;
         font-weight: 700;

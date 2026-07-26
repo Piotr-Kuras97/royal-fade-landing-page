@@ -2,14 +2,14 @@
 
 .testimonials {
     padding: 120px 0;
-    background: #0a0a0a;
+    background: $color-background;
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .section-subtitle {
+    &__subtitle {
         display: flex;
         align-items: center;
         gap: 12px;
@@ -30,7 +30,7 @@
 
     }
 
-    .section-title {
+    &__title {
         margin-bottom: 20px;
         text-align: center;
         font-size: 3rem;
@@ -40,39 +40,40 @@
 
     }
 
-    .section-description {
+    &__description {
         max-width: 700px;
         margin: 0 auto 60px;
         text-align: center;
         line-height: 1.8;
         color: $color-description;
+        padding: 0 30px
     }
 
     &__slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
     }
 
     &__navigation {
-    display: flex;
-    gap: 20px;
+        display: flex;
+        gap: 20px;
     }
 
         &__arrow {
-        width: 56px;
-        height: 56px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(212,175,55,.25);
-        border-radius: 50%;
-        background: transparent;
-        color: $color-primary;
-        cursor: pointer;
-        transition: all .3s ease;
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212,175,55,.25);
+            border-radius: 50%;
+            background: transparent;
+            color: $color-primary;
+            cursor: pointer;
+            transition: all .3s ease;
 
         svg {
             font-size: 1rem;
@@ -80,27 +81,27 @@
 
         &:hover {
             background: $color-primary;
-            color: white;
+            color: $color-light;
             transform: translateY(-3px) scale(1.08);
         }
     }
 
     &__dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 40px;
     }
 
     &__dot {
-    width: 12px;
-    height: 12px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255,255,255,.2);
-    cursor: pointer;
-    transition: all .3s ease;
+        width: 12px;
+        height: 12px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255,255,255,.2);
+        cursor: pointer;
+        transition: all .3s ease;
 
     &--active {
         width: 36px;
@@ -115,9 +116,9 @@
             background .3s ease;
     }
 
-    }
+}
 
-    @media (max-width: $breakpoint-lg) {
+@media (max-width: $breakpoint-lg) {
         &__slider {
             gap: 24px;
         }

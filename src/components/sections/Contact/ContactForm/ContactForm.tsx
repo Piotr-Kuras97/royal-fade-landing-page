@@ -2,7 +2,7 @@ import "./ContactForm.scss";
 
 import { useState } from "react";
 
-import { initialFormData } from "./contact-form.constants";
+import { initialFormData, SUCCESS_MESSAGE_DURATION } from "./contact-form.constants";
 import {
     validateField,
     validateForm
@@ -13,7 +13,7 @@ import type {
     ContactFormErrors
 } from "./contact-form.types";
 
-import { sendContactForm } from "./contact-form.service";
+import { sendContactForm } from "../../../../email/sendEmail";
 
 import Button from "../../../ui/Button/Button";
 
@@ -90,22 +90,16 @@ const ContactForm = () => {
 
             setTimeout(() => {
                 setIsSuccess(false);
-            }, 5000);
+            }, SUCCESS_MESSAGE_DURATION);
 
-            console.log("Wiadomość została wysłana.");
 
         } catch (error) {
-
-            console.error("Nie udało się wysłać formularza.", error);
-
             setSubmitError(
                 "Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę."
             );
 
         } finally {
-
             setIsSubmitting(false);
-
         }
 
     };
@@ -116,16 +110,6 @@ const ContactForm = () => {
             <h3 className="contact-form__title">
                 Napisz do nas
             </h3>
-
-            {isSuccess && (
-                <div 
-                    className="contact-form__success"
-                    role="status"
-                    aria-live="polite"
-                >
-                    Dziękujemy! Twoja wiadomość została pomyślnie wysłana.
-                </div>
-            )}
 
             {submitError && (
                 <div 
@@ -154,6 +138,8 @@ const ContactForm = () => {
                         onChange={handleChange}
                         autoComplete="name"
                         placeholder="→ Wpisz swoje imię i nazwisko"
+                        aria-invalid={!!errors.name}
+                        aria-describedby="name-error"
                     />
 
                     {errors.name && (
@@ -206,6 +192,8 @@ const ContactForm = () => {
                         onChange={handleChange}
                         autoComplete="tel"
                         placeholder="→ Wpisz numer telefonu"
+                        aria-invalid={!!errors.phone}
+                        aria-describedby="phone-error"
                     />
 
                     {errors.phone && (
@@ -232,6 +220,8 @@ const ContactForm = () => {
                         autoComplete="off"
                         placeholder="→ Opisz, w czym możemy Ci pomóc"
                         maxLength={500}
+                        aria-invalid={!!errors.message}
+                        aria-describedby="message-error"
                     />
 
                     {errors.message && (
@@ -252,6 +242,16 @@ const ContactForm = () => {
                 </Button>
 
             </form>
+
+            {isSuccess && (
+                <div 
+                    className="contact-form__success"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Dziękujemy! Twoja wiadomość została pomyślnie wysłana.
+                </div>
+            )}
 
         </div>
     );

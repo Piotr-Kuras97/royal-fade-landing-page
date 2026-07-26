@@ -11,136 +11,142 @@ import useActiveSection from "../../../hooks/useActiveSection";
 import clsx from "clsx";
 
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useBooking } from "../../../context/BookingContext";
 
   
-function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const activeSection = useActiveSection();
+    const activeSection = useActiveSection();
 
-  const handleAppointmentClick = () => {
-    setIsMenuOpen(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    document
-        .getElementById("contact")
-        ?.scrollIntoView({ behavior: "smooth" });
-  };
+    const { openBooking } = useBooking();
 
-  const location = useLocation();
-  const navigate = useNavigate();
+    const isHomePage = location.pathname === "/";
+    const isPricingPage = location.pathname === "/pricing";
 
-  const isHomePage = location.pathname === "/";
-  const isPricingPage = location.pathname === "/pricing";
+    const beforePricingLinks = navigationItems.slice(0, 2);
+    const afterPricingLinks = navigationItems.slice(2);
 
-  const handleNavigation = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-    ) => {
+    const handleAppointmentClick = () => {
         setIsMenuOpen(false);
 
-        if (location.pathname !== "/") {
-        event.preventDefault();
-        navigate("/", {
-            state: {
-                targetSection: href,
-            },
-        });
-        }
+        openBooking()
     };
-  return (
-    <>
-    <header className="navbar">
-      <div className="navbar__container">
 
-        <Logo />
+    const handleNavigation = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+        ) => {
+            setIsMenuOpen(false);
 
-        <nav
-            id="navbar-navigation"
-            className={clsx("navbar__navigation", {
-                "navbar__navigation--active": isMenuOpen,
-            })}
+            if (location.pathname !== "/") {
+            event.preventDefault();
+            navigate("/", {
+                state: {
+                    targetSection: href,
+                },
+            });
+            }
+        };
+
+    return (
+        <>
+        <header className="navbar">
+        <div className="navbar__container">
+
+            <Logo />
+
+            <nav
+                id="navbar-navigation"
+                className={clsx("navbar__navigation", {
+                    "navbar__navigation--active": isMenuOpen,
+                })}
+            >
+                {beforePricingLinks.map((item)  => (
+                    <a
+                        key={item.href}
+                        href={item.href}
+                        className={clsx("navbar__link", {
+                            "navbar__link--active":
+                                isHomePage &&
+                                activeSection === item.href.substring(1),
+                        })}
+                        onClick={(event) => handleNavigation(event, item.href)}
+                    >
+                        {item.label}
+                    </a>
+                ))}
+
+                <NavLink 
+                to="/pricing" 
+                onClick={() => setIsMenuOpen(false)}
+                className={clsx(
+                    "navbar__link",
+                    "navbar__pricing",
+                    {
+                        "navbar__pricing--active": isPricingPage,
+                    }
+                )}
+    >
+                    Cennik
+                </NavLink>
+
+                {afterPricingLinks.map((item)  => (
+                    <a
+                        key={item.href}
+                        href={item.href}
+                        className={clsx("navbar__link", {
+                            "navbar__link--active":
+                                isHomePage &&
+                                activeSection === item.href.substring(1),
+                        })}
+                        onClick={(event) => handleNavigation(event, item.href)}
+                    >
+                        {item.label}
+                    </a>
+                ))}
+
+                <Button
+                    className="navbar__menu-button"
+                    onClick={handleAppointmentClick}
+                    >
+                    Umów wizytę
+                </Button>
+            </nav>
+
+        <button
+            type="button"
+            className="navbar__hamburger"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={
+                isMenuOpen
+                    ? "Zamknij menu"
+                    : "Otwórz menu"
+            }
+            aria-expanded={isMenuOpen}
+            aria-controls="navbar-navigation"
         >
-            {navigationItems.slice(0, 2).map((item)  => (
-                <a
-                    key={item.href}
-                    href={item.href}
-                    className={clsx("navbar__link", {
-                        "navbar__link--active":
-                            isHomePage &&
-                            activeSection === item.href.substring(1),
-                    })}
-                    onClick={(event) => handleNavigation(event, item.href)}
-                >
-                    {item.label}
-                </a>
-            ))}
+            <FontAwesomeIcon
+                icon={isMenuOpen ? faXmark : faGripLines}
+                aria-hidden="true"
+            />
+        </button>
+        </div>
+        </header>
 
-            <NavLink 
-            to="/pricing" 
+        {isMenuOpen && (
+        <div
+            className="navbar__overlay"
             onClick={() => setIsMenuOpen(false)}
-            className={clsx(
-                "navbar__link",
-                "navbar__pricing",
-                {
-                    "navbar__pricing--active": isPricingPage,
-                }
-            )}
->
-                Cennik
-            </NavLink>
+            aria-hidden="true"
+        />
+    )}
 
-            {navigationItems.slice(2).map((item)  => (
-                <a
-                    key={item.href}
-                    href={item.href}
-                    className={clsx("navbar__link", {
-                        "navbar__link--active":
-                            isHomePage &&
-                            activeSection === item.href.substring(1),
-                    })}
-                    onClick={(event) => handleNavigation(event, item.href)}
-                >
-                    {item.label}
-                </a>
-            ))}
-
-            <Button
-                className="navbar__menu-button"
-                onClick={handleAppointmentClick}
-                >
-                Umów wizytę
-            </Button>
-        </nav>
-
-      <button
-          type="button"
-          className="navbar__hamburger"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={
-              isMenuOpen
-                  ? "Zamknij menu"
-                  : "Otwórz menu"
-          }
-          aria-expanded={isMenuOpen}
-          aria-controls="navbar-navigation"
-      >
-          <FontAwesomeIcon
-              icon={isMenuOpen ? faXmark : faGripLines}
-              aria-hidden="true"
-          />
-      </button>
-      </div>
-    </header>
-
-    {isMenuOpen && (
-    <div
-      className="navbar__overlay"
-      onClick={() => setIsMenuOpen(false)}
-    />
-  )}
-
-  </>
-  );
+    </>
+    );
 }
 
 export default Navbar;

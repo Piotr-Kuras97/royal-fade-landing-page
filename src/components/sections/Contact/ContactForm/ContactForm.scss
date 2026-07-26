@@ -9,7 +9,7 @@
 
     &__title {
     margin-bottom: 36px;
-    color: $color-white;
+    color: $color-light;
     font-size: 2rem;
     font-family: $font-heading;
     text-align: center;
@@ -40,7 +40,7 @@
         background: rgba(255,255,255,.03);
         border: 1px solid rgba(255,255,255,.08);
         border-radius: 12px;
-        color: $color-white;
+        color: $color-light;
         font-size: 1rem;
         transition: $transition-default;
     }
@@ -57,7 +57,6 @@
         border-color: $color-primary;
         box-shadow: 0 0 0 3px rgba(212,175,55,.12);
         transform: translateY(-2px);
-        opacity: .6;
     }
 
     &__group textarea {
@@ -77,6 +76,26 @@
     line-height: 1.4;
     }
 
+    &__success{
+        margin-top: 2rem;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        background: rgba(76, 175, 80, 0.15);
+        border: 1px solid rgba(76, 175, 80, 0.35);
+        color: #8bc34a;
+        font-weight: 500;
+    }
+
+    &__submit-error{
+        margin-top: 2rem;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        background: rgba(244, 67, 54, 0.12);
+        border: 1px solid rgba(244, 67, 54, 0.35);
+        color: #ef5350;
+        font-weight: 500;
+    }
+
 }
 
 @media (max-width: $breakpoint-lg) {
@@ -91,22 +110,3 @@
     }
 }
 
-.contact-form__success {
-    margin-bottom: 2rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    background: rgba(76, 175, 80, 0.15);
-    border: 1px solid rgba(76, 175, 80, 0.35);
-    color: #8bc34a;
-    font-weight: 500;
-}
-
-.contact-form__submit-error {
-    margin-bottom: 2rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    background: rgba(244, 67, 54, 0.12);
-    border: 1px solid rgba(244, 67, 54, 0.35);
-    color: #ef5350;
-    font-weight: 500;
-}

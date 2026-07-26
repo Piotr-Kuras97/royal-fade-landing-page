@@ -8,6 +8,7 @@
   background: rgba(10, 10, 10, .75);
   backdrop-filter: blur(10px);
   padding-top: 15px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
 
     &__container {
     max-width: $container-width;
@@ -26,7 +27,7 @@
         z-index: 1001;
     }
 
-    .navbar__link {
+    &__link {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -100,7 +101,7 @@
         animation: overlayFade .3s ease;
     }
 
-    .navbar__pricing {
+    &__pricing {
     display: inline-flex;
     align-items: center;
     justify-content: center;

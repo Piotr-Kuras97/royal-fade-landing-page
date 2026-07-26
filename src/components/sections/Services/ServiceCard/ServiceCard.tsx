@@ -30,7 +30,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
                 {service.description}
             </p>
 
-            <div className="service-card__divider"></div>
+            <div className="service-card__divider" />
 
             <span className="service-card__price">
                 {service.price}

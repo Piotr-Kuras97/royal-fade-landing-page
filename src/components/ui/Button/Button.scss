@@ -54,7 +54,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-sm) {
   .button {
     width: 100%;
     max-width: 280px;

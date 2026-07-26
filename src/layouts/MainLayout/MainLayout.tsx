@@ -2,9 +2,12 @@ import { Outlet } from "react-router-dom";
 
 import Navbar from "../../components/layouts/Navbar/Navbar";
 import Footer from "../../components/layouts/Footer/Footer";
-import ScrollToTop from "../../components/common/ScrollToTop/ScrollToTop";
+import ScrollToTop from "../../common/ScrollToTop/ScrollToTop";
+import BookingModal from "../../features/booking/BookingModal";
+
 
 function MainLayout(){
+
     return (
         <>
             <ScrollToTop />
@@ -15,6 +18,8 @@ function MainLayout(){
             </main>
 
             <Footer />
+
+            <BookingModal />
         </>
     )
 }

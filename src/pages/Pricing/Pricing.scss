@@ -6,6 +6,7 @@
 
   &__container{
     max-width: $container-width;
+    width: 100%;
     margin: 0 auto;
     padding: 0 40px;
   }
@@ -20,6 +21,7 @@
 
   &__title {
     margin-bottom: 1rem;
+    font-family: $font-heading;
   }
 
   &__divider {
@@ -47,7 +49,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media ($breakpoint-lg) {
   .pricing {
     padding: 8rem 0 6rem;
 
@@ -61,7 +63,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media ($breakpoint-md) {
   .pricing {
     padding: 7rem 0 5rem;
 
