@@ -1,6 +1,6 @@
 .reveal {
     opacity: 0;
-    transform: translateY(80px);
+    transform: scale(0.9);
 
     transition:
         opacity 0.8s ease,
@@ -10,6 +10,6 @@
 
     &--visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
