@@ -7,7 +7,6 @@ const {
     VITE_EMAILJS_PUBLIC_KEY,
     VITE_EMAILJS_SERVICE_ID,
     VITE_EMAILJS_TEMPLATECONTACT_ID,
-    VITE_EMAILJS_TEMPLATEBOOKING_ID,
 } = import.meta.env;
 
 export const sendContactForm = async (
