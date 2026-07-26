@@ -1,13 +1,18 @@
 .reveal {
     opacity: 0;
+    transform: translateY(80px);
+    filter: blur(4px);
 
     transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+        opacity .7s cubic-bezier(.22, 1, .36, 1),
+        transform .7s cubic-bezier(.22, 1, .36, 1),
+        filter .7s cubic-bezier(.22, 1, .36, 1);
 
     will-change: opacity, transform;
 
     &--visible {
         opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
     }
 }
